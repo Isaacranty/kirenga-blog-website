@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Offline — Kirenga Isaac</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0a1628; color: #f8f9fc;
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 40px 20px;
+  }
+  .icon { font-size: 5rem; margin-bottom: 24px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+  h1 {
+    font-size: 2.2rem; color: #c9a84c; margin-bottom: 12px;
+    font-weight: 700;
+  }
+  p { color: rgba(248,249,252,0.55); max-width: 400px; line-height: 1.7; margin-bottom: 8px; font-size: 0.95rem; }
+  .divider { width: 50px; height: 3px; background: #c9a84c; border-radius: 2px; margin: 24px auto; }
+  .cached-info {
+    background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 10px; padding: 16px 24px; margin: 20px auto;
+    max-width: 380px; font-size: 0.85rem; color: rgba(248,249,252,0.6);
+  }
+  .btn {
+    display: inline-block; background: #c9a84c; color: #0a1628;
+    padding: 13px 32px; border-radius: 8px; font-weight: 700;
+    text-decoration: none; font-size: 1rem; margin-top: 20px;
+    cursor: pointer; border: none; font-family: inherit;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn:hover { background: #e8c97a; transform: translateY(-2px); }
+  .contact-bar {
+    margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+  }
+  .contact-bar a { color: rgba(248,249,252,0.45); font-size: 0.82rem; text-decoration: none; }
+  .contact-bar a:hover { color: #c9a84c; }
+  .brand { font-size: 1.8rem; color: #c9a84c; font-weight: 700; margin-bottom: 24px; letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+  <div class="brand">KI.</div>
+  <div class="icon">📡</div>
+  <h1>You're Offline</h1>
+  <div class="divider"></div>
+  <p>It looks like you've lost your internet connection.</p>
+  <p>Don't worry — some pages may still be available from your cache.</p>
+  <div class="cached-info">
+    💡 <strong>Tip:</strong> Pages you've visited before are saved and still accessible. Reconnect to load new content.
+  </div>
+  <button class="btn" onclick="retryNow()">🔄 Try Again</button>
+  <div class="contact-bar">
+    <a href="mailto:kirengaisaac@gmail.com">✉ kirengaisaac@gmail.com</a>
+    <a href="https://wa.me/256743836859">💬 WhatsApp</a>
+  </div>
+  <script>
+    function retryNow() {
+      if (navigator.onLine) window.location.href = '/';
+      else { document.querySelector('.btn').textContent = '❌ Still offline — check your connection'; }
+    }
+    // Auto-redirect when connection restored
+    window.addEventListener('online', () => window.location.href = '/');
+    // Check if already online (SW may have served this page from cache even when online)
+    if (navigator.onLine) window.location.href = '/';
+  </script>
+</body>
+</html>

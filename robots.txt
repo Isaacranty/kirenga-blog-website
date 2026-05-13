@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kirengaisaac.github.io/sitemap.xml
+
+Disallow: /sw.js
+Disallow: /manifest.json
