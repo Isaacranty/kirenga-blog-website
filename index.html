@@ -3014,8 +3014,8 @@
 
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
           <a href="#contact" class="btn-primary">Work With Me →</a>
-          <a href="cv.pdf" download="Kirenga_Isaac_CV.pdf" class="btn-outline" id="cvBtn" onclick="checkCV(event)" style="padding:13px 24px;border-radius:8px;font-size:0.9rem;">⬇ Download CV</a>
-          <label for="cvUpload" style="display:inline-block;cursor:pointer;padding:13px 20px;border-radius:8px;font-size:0.82rem;border:1.5px solid var(--border);color:var(--text-light);background:transparent;transition:0.2s;">📎 Upload CV</label>
+          <a href="#" class="btn-outline" id="cvBtn" onclick="document.getElementById('cvUpload').click(); return false;" style="padding:13px 24px;border-radius:8px;font-size:0.9rem;">📥 Upload Your CV</a>
+          <label for="cvUpload" style="display:inline-block;cursor:pointer;padding:13px 20px;border-radius:8px;font-size:0.82rem;border:1.5px solid var(--border);color:var(--text-light);background:transparent;transition:0.2s;">⬇️ Download Guide</label>
           <input type="file" id="cvUpload" accept=".pdf,.doc,.docx" style="display:none;" onchange="attachCV(event)"/>
         </div>
         <div id="cvStatus" style="font-size:0.8rem;color:var(--gold);margin-top:8px;display:none;"></div>
@@ -4510,7 +4510,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 Kirenga Isaac. All rights reserved.</div>
+      <div class="footer-copy">© 2026 Kirenga Isaac. All rights reserved.</div>
       <div class="footer-links">
         <a href="#about">About</a>
         <a href="#portfolio">Portfolio</a>
