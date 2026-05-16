@@ -8,6 +8,8 @@
 <meta name="keywords" content="systems developer Uganda, web developer Kampala, Linux admin Uganda, network engineer Uganda, Isaac Kirenga, full stack developer Uganda"/>
 <meta name="author" content="Kirenga Isaac"/>
 <meta name="robots" content="index, follow"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta property="og:title" content="Kirenga Isaac — Systems Developer Uganda"/>
 <meta property="og:description" content="Professional systems developer in Uganda. Linux, web apps, network engineering, security & DevOps."/>
 <meta property="og:type" content="website"/>
@@ -16,6 +18,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Kirenga Isaac — Systems Developer"/>
 <meta name="twitter:description" content="Professional systems developer in Uganda. Linux, web, networking & more."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%230a1628' width='32' height='32'/><circle cx='16' cy='16' r='14' fill='none' stroke='%23c9a84c' stroke-width='1'/><text x='16' y='21' font-size='20' font-weight='bold' fill='%23c9a84c' text-anchor='middle' font-family='Arial'>K</text></svg>" type="image/svg+xml"/>
 <link rel="canonical" href="https://kirengaisaac.github.io"/>
 
 <!-- JSON-LD Structured Data -->
@@ -3058,7 +3061,8 @@
     </div>
     <div class="portfolio-grid reveal" id="portfolioGrid">
 
-      <div class="project-card" data-category="web" onclick="openModal('🌍','Business Management Portal','Web,Full-Stack,PHP','PROBLEM: A Kampala SME was managing sales, inventory and staff reports across 6 different spreadsheets. Data errors were costing 3+ hours of admin daily and management had no real-time visibility.\n\nSOLUTION: Built a multi-user web portal with role-based access, real-time dashboards, inventory tracking, and one-click PDF report generation.\n\nRESULT: Reporting time cut by 70%. Management now has live data on any device. Zero spreadsheet errors since launch.','Client|Kampala SME,Stack|PHP · MySQL · Vanilla JS,Duration|3 weeks,Impact|70% faster reporting','#','View Case Study')" style="cursor:pointer;">
+      <div class="project-card" data-category="web" onclick="showProjectModal('Business Management Portal')" style="cursor:pointer;position:relative;">
+        <div style="position:absolute;top:8px;right:8px;background:rgba(201,168,76,0.9);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:700;z-index:10;">FEATURED</div>
         <div class="project-thumb">🌍</div>
         <div class="project-meta">
           <div class="project-tags"><span class="project-tag">Web</span><span class="project-tag">PHP</span><span class="project-tag">MySQL</span></div>
@@ -6331,7 +6335,7 @@
     const blogHeader = document.querySelector('#blog .section-inner > .reveal');
     if (blogHeader) {
       const rssBtn = document.createElement('a');
-      rssBtn.href = 'https://kirenga-blog.github.io/feed.xml';
+      rssBtn.href = 'https://kirenga-blog.vercel.app/feed.xml';
       rssBtn.target = '_blank';
       rssBtn.title = 'Subscribe via RSS';
       rssBtn.style.cssText = 'display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;background:rgba(255,165,0,0.12);border:1px solid rgba(255,165,0,0.25);color:#fb923c;font-size:0.82rem;font-weight:700;text-decoration:none;transition:0.2s;white-space:nowrap;';
@@ -6346,7 +6350,7 @@
     const footerSocials = document.querySelector('.footer-socials');
     if (footerSocials) {
       const rssLink = document.createElement('a');
-      rssLink.href = 'https://kirenga-blog.github.io/feed.xml';
+      rssLink.href = 'https://kirenga-blog.vercel.app/feed.xml';
       rssLink.target = '_blank';
       rssLink.className = 'social-link';
       rssLink.title = 'RSS Feed';
@@ -6763,9 +6767,9 @@ echo "Log cleanup complete"
 # SCRIPT 5: Disk Usage Alert
 #!/bin/bash
 THRESHOLD=85
-USAGE=$(df / | awk 'NR==2{print $5}' | tr -d '%')
-if [ $USAGE -gt $THRESHOLD ]; then
-  echo "WARNING: Disk at ${USAGE}%" | mail -s "Disk Alert" kirengaisaac@gmail.com
+USAGE=\$(df / | awk 'NR==2{print \$5}' | tr -d '%')
+if [ \$USAGE -gt \$THRESHOLD ]; then
+  echo "WARNING: Disk at \${USAGE}%" | mail -s "Disk Alert" kirengaisaac@gmail.com
 fi
 
 # More scripts available at: github.com/kirengaisaac
@@ -7076,11 +7080,11 @@ fi
       const el=document.getElementById('timeOnPage');
       if(el) el.textContent=sec<60?sec+'s':Math.floor(sec/60)+'m '+sec%60+'s';
     },1000);
-    // Location via free IP API
-    fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
-      const el=document.getElementById('visitorLocation');
-      if(el) el.textContent=`${d.city||'Unknown'}, ${d.country_name||''}`;
-    }).catch(()=>{ const el=document.getElementById('visitorLocation'); if(el) el.textContent='Unknown'; });
+    // Location via free IP API - DISABLED (CORS blocked)
+    // fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
+    //   const el=document.getElementById('visitorLocation');
+    //   if(el) el.textContent=`${d.city||'Unknown'}, ${d.country_name||''}`;
+    // }).catch(()=>{ const el=document.getElementById('visitorLocation'); if(el) el.textContent='Unknown'; });
   })();
 
   // ── 10. ACHIEVEMENT BADGES ──
