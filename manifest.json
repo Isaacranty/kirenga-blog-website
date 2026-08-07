@@ -1,4 +1,4 @@
-{
+{  
   "name": "Kirenga Isaac — Systems Developer",
   "short_name": "Kirenga Isaac",
   "description": "Professional systems developer in Uganda. Linux, web, networking & DevOps.",
@@ -9,13 +9,13 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/kirenga-blog-website/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "/kirenga-blog-website/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
